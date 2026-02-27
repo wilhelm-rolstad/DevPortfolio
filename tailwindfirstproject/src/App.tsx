@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
-import type { Application } from '@splinetool/runtime'
+import { useState, useEffect } from 'react'
 
 import { BrowserRouter, Routes, Route } from 'react-router'
 import Home from './Home'
@@ -11,8 +10,6 @@ import Contact from './Contact'
 import F1 from './f1_car'
 
 import './App.css'
-
-const CV_SPLINE_TRIGGER = 'switch'
 
 function App() {
 

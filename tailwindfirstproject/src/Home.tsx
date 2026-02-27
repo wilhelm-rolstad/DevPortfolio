@@ -1,5 +1,4 @@
 import { usePageSeo } from './hooks/usePageSeo'
-import Spline from '@splinetool/react-spline';
 
 
 const Dashboard = () => {
