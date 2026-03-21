@@ -7,21 +7,8 @@ import LOGO from '../assets/LOGOwilhelmrolstad.svg?react'
 function Navbar() {
 
     const [isHidden, setIsHidden] = useState(true)
-    const languageVisibility = isHidden ? 'hidden' : '';
 
     const navigate = useNavigate()
-
-    function setDarkTheme() {
-        const root = document.documentElement
-        root.style.setProperty('--bg-color', '#0b0b0b')
-        root.style.setProperty('--text-color', '#f5f5f5')
-    }
-
-    function setLightTheme() {
-        const root = document.documentElement
-        root.style.setProperty('--bg-color', '#ffffff')
-        root.style.setProperty('--text-color', '#111111')
-    }
 
     const underline = "underline underline-offset-4"
     const noUnderline = "no-underline hover:scale-110 active:scale-95 transition duration 200" 

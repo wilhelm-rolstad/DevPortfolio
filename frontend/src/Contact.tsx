@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Phone, Mail, Send } from 'lucide-react'
+import { Phone, Mail} from 'lucide-react'
 const Contact = () => {
     
     const[name, setName] = useState("");
