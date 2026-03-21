@@ -1,6 +1,7 @@
 import { useNavigate, NavLink } from 'react-router'
 import { useState } from 'react'
 import { Languages} from 'lucide-react' 
+import LOGO from '../assets/LOGOwilhelmrolstad.svg?react'
 
 
 function Navbar() {
@@ -25,11 +26,11 @@ function Navbar() {
     const underline = "underline underline-offset-4"
     const noUnderline = "no-underline hover:scale-110 active:scale-95 transition duration 200" 
   return (
-    <nav className="bg-gray-200 w-full">
+    <nav className="bg-black w-full text-white">
         <div
         className="sticky top-0 w-full h-20 py-5 text-lg
         flex flex-row gap-10 items-center z-50 max-w-5xl mx-auto">
-            <h1 className="text-2xl cursor-pointer" onClick={()=> navigate("/")}>Wilhelm Rolstad</h1>
+                <LOGO className="cursor-pointer h-10 fill-white"onClick={()=> navigate("/")}/>
                 <NavLink to="/" className={({ isActive }) => `ml-auto ${isActive ? underline: noUnderline}`}>Home</NavLink>
                 <NavLink to="/projects" className={({ isActive }) => isActive ? underline: noUnderline}>Projects</NavLink>
                 <NavLink to="/cv" className={({ isActive }) => isActive ? underline: noUnderline}>CV</NavLink>

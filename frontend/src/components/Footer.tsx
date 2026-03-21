@@ -1,5 +1,5 @@
 import {Mail, Github, Linkedin, Phone} from 'lucide-react'
-
+import LOGO from '../assets/LOGOwilhelmrolstad.svg?react'
 import SkylineIcon from '../assets/Vectors/Skyline.svg?react'
 
 const Footer = () => {
@@ -10,14 +10,15 @@ const Footer = () => {
         <>
             <div className="relative w-full bg-gray-300 overflow-hidden h-100 mt-20 items-center">
                 <div className=" mx-auto max-w-5xl top-1 left-2 flex flex-col gap-2 py-6 z-100 text-[10px]">
+                    <LOGO className="h-20 fill-black text-white hover:outline-none"/>
                     <div className="flex gap-2 items-center">
                         <Phone className="h-8"/>
-                        <p className={fontStyle1}>+47 90 61 23 35</p>
+                        <p className={fontStyle1}><a href="tel:wilhelmsrolstad@gmail.com"> +47 90 61 23 35</a></p>
                     </div>
                     
                     <div className="flex gap-2 items-center">
                         <Mail className="h-8"></Mail>
-                        <p className={fontStyle1}>wilhelmsrolstad@gmail.com</p>
+                        <p className={fontStyle1}><a href="mailto:wilhelmsrolstad@gmail.com"> wilhelmsrolstad@gmail.com</a></p>
                     </div>
 
                     <div className="flex gap-2 items-center">

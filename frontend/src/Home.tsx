@@ -27,9 +27,9 @@ const Dashboard = () => {
                 )}
                 </AnimatedBox>
 
-                <div className="flex flex-row gap-12">
-                    <section>
-                    <h2 className="text-lg">Studie relatert kompetanse og skills</h2>
+                <div className="flex flex-row gap-12 border border-gray-300 rounded-xl px-5 py-10">
+                    <section className="">
+                    <h2 className="text-lg">Studie relatert kompetanse og ferdigheter</h2>
                         <ul className="list-disc ml-10">
                             <li>Versjonskontroll git, Github</li>
                             <li>Python</li>
@@ -42,9 +42,9 @@ const Dashboard = () => {
                             <li>Generell kunnskap om datamskiner og operativsystemer</li>
                         </ul>
                     </section>
-
+                     <div className="w-px self-stretch bg-gray-300" />
                     <section>
-                        <h2 className="text-lg">Annen kompetanse</h2>
+                        <h2 className="text-lg">Andre ferdigheter</h2>
                         <ul className="list-disc ml-10">
                             <li>Blender - 3D modellering</li>
                             <li>Kundeservice - skaderådgiver forsikring</li>
