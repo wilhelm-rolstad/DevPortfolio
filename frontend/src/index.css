@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: "Vercetti";
+  src: url("/fonts/Vercetti-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-vercetti: "Vercetti", sans-serif;
+}
+
+@layer utilities {
+  .font-vercetti {
+    font-family: "Vercetti", sans-serif;
+  }
+}
+
+:root {
+  --text-color: #000000;
+  font-family: "Vercetti", sans-serif;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
