@@ -1,12 +1,41 @@
 import AnimatedBox from './components/AnimatedBox'
 import {ChevronRight} from 'lucide-react'
 import { useNavigate } from 'react-router'
+import { useEffect, useState } from 'react'
 import coffeeMachine from './assets/coffeemachine.png'
+import LOGO from './assets/LOGOwilhelmrolstad.svg?react'
 
 const Dashboard = () => {
     const navigate = useNavigate();
+    const [hideIntro, setHideIntro] = useState(() => sessionStorage.getItem("seenIntro") === "true");
+
+    useEffect(() => {
+    if (sessionStorage.getItem("seenIntro") === "true") {
+        setHideIntro(true);
+        return;
+    }
+
+    const timer = setTimeout(() => {
+        sessionStorage.setItem("seenIntro", "true");
+        setHideIntro(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+    }, []);
+
+
+
+
     return(
         <>
+        <div
+            className={`text-white fixed inset-0 z-[9999] flex items-center justify-center bg-black transition-opacity duration-[3000ms] ${
+                hideIntro ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+            >
+            <LOGO className="fill-white h-40" />
+        </div>
+        
         <div className="mx-auto flex flex-col items-center">
             <div className="flex flex-col gap-5 m-10 h-screen max-w-5xl" >
                 <h1 className=" text-5xl">Wilhelm Svensgaard Rolstad</h1>
