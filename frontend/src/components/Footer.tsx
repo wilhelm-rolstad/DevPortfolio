@@ -4,11 +4,11 @@ import SkylineIcon from '../assets/Vectors/Skyline.svg?react'
 
 const Footer = () => {
 
-    const fontStyle1 = "text-lg "
-    const fontStyle2 = "text-lg hover:underline transition"
+    const fontStyle1 = "text-md "
+    const fontStyle2 = "text-md hover:underline transition"
     return(
         <>
-            <div className="relative w-full bg-gray-300 overflow-hidden h-100 mt-20 items-center">
+            <div className="relative w-full bg-gray-300 overflow-hidden h-100 mt-20 items-center p-5">
                 <div className=" mx-auto max-w-5xl top-1 left-2 flex flex-col gap-2 py-6 z-100 text-[10px]">
                     <LOGO className="h-20 fill-black text-white hover:outline-none"/>
                     <div className="flex gap-2 items-center">

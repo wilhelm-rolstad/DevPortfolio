@@ -49,7 +49,7 @@ const Contact = () => {
         }
     }
     const inputStyle = "border rounded-lg py-2 px-3 w-full bg-gray-100 border-gray-300 focus:outline-none"
-    const contactCard = "border border-gray-300 px-5 py-10 rounded-2xl w-[50%] bg-gray-200 flex gap-2 items-center justify-center"
+    const contactCard = "border border-gray-300 px-5 py-10 rounded-2xl w- bg-gray-200 flex-1 flex gap-2 items-center justify-center min-w-80"
 
     return(
         <>  
@@ -59,7 +59,7 @@ const Contact = () => {
                 <p>Kontakt meg via mail, over telefon eller bruk kontaktskjemaet</p>
             </header>
 
-            <section className="flex mx-auto w-full items-center gap-5">
+            <section className="flex flex-wrap mx-auto w-full items-center justify-center gap-5">
                 <div className={contactCard}>
                     <Phone/>
                     <p><a href="tel:wilhelmsrolstad@gmail.com"> +47 90 61 23 35</a></p>
