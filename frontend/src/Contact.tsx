@@ -14,11 +14,13 @@ const Contact = () => {
         if(!name || !email || !title || !message){
             setUserFeedback("Alle felter må fylles ut")
             setStatus("error")
+            return;
         }
 
         else if (!(email.includes("@") && email.includes("."))){
             setUserFeedback("Epost addresse er ikke gyldig")
             setStatus("error")
+            return;
         }
 
        const response = await fetch("/api/contact", {
