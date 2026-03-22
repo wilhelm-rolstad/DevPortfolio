@@ -45,3 +45,12 @@
 @keyframes blink {
   50% { border-color: transparent }
 }
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(120vw);
+  }
+}

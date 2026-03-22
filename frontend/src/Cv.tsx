@@ -10,7 +10,10 @@ const CV = () => {
         description: 'CV for Wilhelm Rolstad: education at NTNU and work experience including Storebrand and military service.',
         canonicalPath: '/Cv',
     })
-
+    //MAKE THE TIMELINE LOOK LIKE A COMMIT AND MERGE REQUEST GITHUB NETWORK TIMELINE. THE TIMELINE/LIFE IS MAIN THEN BRANCH OUT FOR EACH EXPERIENCE THEN MERGE WHEN DONE!
+    //BRANCHES: VIDEREGÅENDE SKOLE, MILITÆRET, SPAR SNARØYA, STUDIE, STOREBRAND FORSIKRING, DOTDAGENE. 
+    //SHOULD BE DONE ON-scroll
+    //WHENEVER A MERGE HAPPENS THE PR IS SHOWN WITH TITLE, DATE and DESCRIPTION!
 
     return(
         <>
