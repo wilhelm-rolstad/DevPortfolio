@@ -70,7 +70,7 @@ function GitHubCard({
                             </div>
                             <div className="p-5">
                                 <p>{description}</p>
-                                <img src={imagePath} alt="ShowCaseImage" className="w-20 h-20 border"/>
+                                <img src={imagePath} alt="ShowCaseImage" className="w-100"/>
                             </div>
                         </section>
                     </div>

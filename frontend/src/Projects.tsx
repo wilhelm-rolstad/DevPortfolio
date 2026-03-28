@@ -11,7 +11,7 @@ const Projects = () =>{
 
     return(
         
-        <div className="flex flex-col gap-10 max-w-5xl mx-auto py-10">
+        <div className="flex flex-col gap-10 max-w-5xl mx-auto p-10">
             <header>
                     <h1 className="text-2xl">Personlige prosjekter</h1>
                     <p>Ved siden av studiene prøver jeg å anvende kunnskap i realistiske prosjekter, for å kombinere ny kompetanse med gammel.<br/>
