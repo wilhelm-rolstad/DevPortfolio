@@ -16,6 +16,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "express": "^5.2.1",
     "geist": "^1.7.0",
+    "ldrs": "^1.1.9",
     "lucide-react": "^0.563.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

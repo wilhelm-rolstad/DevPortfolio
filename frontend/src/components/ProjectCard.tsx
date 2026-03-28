@@ -21,7 +21,7 @@ function ProjectCard({title, description, link, imageElement, color1="gray", col
             </header>
             <section className="flex gap-2">
                 <p className="w-[50%]">{description}</p>
-                <img src={imageElement} className={imageStyle}></img>
+                <img src={imageElement} className={`${imageStyle} hidden sm:block`}></img>
             </section>
              <button className={buttonStyle}><a href={link}>Sjekk ut prosjektet</a></button>
         </section>

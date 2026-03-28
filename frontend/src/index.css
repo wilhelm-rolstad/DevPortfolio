@@ -54,3 +54,24 @@
     transform: translateX(120vw);
   }
 }
+
+@keyframes draw-branch {
+  from {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes pulse-size {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}

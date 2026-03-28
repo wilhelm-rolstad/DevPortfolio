@@ -3,10 +3,10 @@ import LOGO from '../assets/LOGOwilhelmrolstad.svg?react'
 import SkylineIcon from '../assets/Vectors/Skyline.svg?react'
 
 const Footer = () => {
-    const fontStyle2 = "text-md hover:underline transition flex gap-2 items-center cursor-pointer w-fit"
+    const fontStyle2 = "text-md hover:underline transition flex gap-2 items-center  cursor-pointer w-fit"
     return(
         <>
-            <div className="relative w-full bg-gray-300 overflow-hidden h-100 mt-20 items-center p-5">
+            <div className="relative w-full mt-auto bg-gray-300 overflow-hidden h-100 items-center p-5">
                 <div className="relative mx-auto max-w-5xl flex flex-col gap-2 py-6 text-[10px] z-100">
                     <LOGO className="h-20 fill-black text-white hover:outline-none" />
 
