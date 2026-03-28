@@ -2,7 +2,6 @@ import AnimatedBox from './components/AnimatedBox'
 import {ChevronRight} from 'lucide-react'
 import { useNavigate } from 'react-router'
 import { useEffect, useState } from 'react'
-import coffeeMachine from './assets/coffeemachine.png'
 import LOGO from './assets/LOGOwilhelmrolstad.svg?react'
 
 const Dashboard = () => {
