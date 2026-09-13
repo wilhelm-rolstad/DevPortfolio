@@ -1,6 +1,6 @@
 import AnimatedBox from './components/AnimatedBox'
 import ProjectCard from './components/ProjectCard'
-import JkCoachingLogo from './assets/jk_coaching.png'
+import JkCoachingLogo from './assets/jkcoaching.PNG'
 import stinnVideo from './assets/Stinn.mp4?url'
 import KontaktMeg from './components/KontaktMeg'
 import DOTDAGENELOGO from './assets/DOTDAGENELOGO.svg'
