@@ -1,41 +1,31 @@
-import { FaGithub, FaLinkedin, FaPhone, FaEnvelope } from "react-icons/fa"
-import LOGO from '../assets/LOGOwilhelmrolstad.svg?react'
-import SkylineIcon from '../assets/Vectors/Skyline.svg?react'
-
 const Footer = () => {
-    const fontStyle2 = "text-md hover:underline transition flex gap-2 items-center  cursor-pointer w-fit"
-    return(
-        <>
-            <div className="relative w-full mt-auto bg-gray-300 overflow-hidden h-100 items-center p-5">
-                <div className="relative mx-auto max-w-5xl flex flex-col gap-2 py-6 text-[10px] z-100">
-                    <LOGO className="h-20 fill-black text-white hover:outline-none" />
+    const linkClassName = "w-fit rounded-sm underline-offset-4 transition-colors hover:text-gray-900 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-500"
 
-                    <a className={fontStyle2} href="tel:+4790612335">
-                        <FaPhone className="h-6 w-6" />
-                        +47 90 61 23 35
-                    </a>
+    return (
+        <footer className="mt-auto w-full border-t border-gray-200 bg-white">
+            <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 text-sm text-gray-600 sm:px-10 lg:flex-row lg:items-center lg:justify-between">
+                <p className="shrink-0">© {new Date().getFullYear()} Wilhelm Rolstad</p>
 
-                    <a className={fontStyle2} href="mailto:wilhelmsrolstad@gmail.com">
-                        <FaEnvelope className="h-6 w-6" />
+                <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
+                    <a className={`${linkClassName} break-all`} href="mailto:wilhelmsrolstad@gmail.com">
                         wilhelmsrolstad@gmail.com
                     </a>
-
-                    <a className={fontStyle2} href="https://github.com/wilhelm-rolstad">
-                        <FaGithub className="h-6 w-6" />
-                        wilhelm-rolstad
-                    </a>
-
-                    <a className={fontStyle2} href="https://www.linkedin.com/in/wilhelm-rolstad-590a29361/">
-                        <FaLinkedin className="h-6 w-6" />
-                        Wilhelm Rolstad
+                    <a className={linkClassName} href="tel:+4790612335">
+                        +47 90 61 23 35
                     </a>
                 </div>
 
-                <SkylineIcon className="absolute z-10 left-1/2 bottom-0 h-60 w-auto -translate-x-21/41 -translate-y-[-2rem] text-gray-400" preserveAspectRatio="xMidYMid slice"></SkylineIcon>
-                <p className="absolute left-1/2 bottom-0 h-60 w-auto translate-y-50"> cc wilhelm rolstad</p>
+                <nav aria-label="Sosiale medier" className="flex flex-wrap items-center gap-5">
+                    <a className={linkClassName} href="https://github.com/wilhelm-rolstad">
+                        GitHub
+                    </a>
+                    <a className={linkClassName} href="https://www.linkedin.com/in/wilhelm-rolstad-590a29361/">
+                        LinkedIn
+                    </a>
+                </nav>
             </div>
-        </>
+        </footer>
     )
 }
 
-export default Footer;
+export default Footer

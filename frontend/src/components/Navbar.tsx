@@ -1,56 +1,51 @@
-import { useNavigate, NavLink } from 'react-router'
+import { Link, NavLink, useLocation } from 'react-router'
 import { useState } from 'react'
-import { Languages} from 'lucide-react' 
+import { Languages } from 'lucide-react'
 import LOGO from '../assets/LOGOwilhelmrolstad.svg?react'
 
+const sections = [
+    { id: 'hjem', label: 'Hjem' },
+    { id: 'prosjekter', label: 'Prosjekter' },
+    { id: 'cv', label: 'CV' },
+]
 
-function Navbar() {
-    const [isHidden, setIsHidden] = useState(true)
-    const navigate = useNavigate()
-    const fontStyle = "text-sm md:text-lg"
-    const underline = "underline underline-offset-4"
-    const noUnderline = "no-underline hover:scale-110 active:scale-95 transition duration 200" 
-  return (
-    <>
-    <nav className="sticky top-0 h-20 py-5 text-lg bg-white z-100 w-full text-black flex justify-center shadow-xl">
-        <div className="w-full grid grid-cols-3 items-center z-50 mx-0 sm:mx-10">
-            
-            <div className="flex justify-start">
-                <LOGO className="cursor-pointer h-5 w-23 md:h-8 fill-black" onClick={() => navigate("/")} />
-            </div>
+export default function Navbar() {
+    const [languageOpen, setLanguageOpen] = useState(false)
+    const { pathname, hash } = useLocation()
+    const linkClass = 'rounded-sm py-1 underline-offset-4 transition-colors hover:text-black hover:underline focus-visible:outline-2 focus-visible:outline-offset-4'
 
-            <div className="flex justify-center items-center gap-[10%] sm:gap-[20%]">
-                <NavLink to="/" className={({ isActive }) => ` ${fontStyle} ${isActive ? underline : noUnderline}`}>Hjem</NavLink>
-                <NavLink to="/projects" className={({ isActive }) => ` ${fontStyle} ${isActive ? underline : noUnderline}`}>Prosjekter</NavLink>
-                <NavLink to="/cv" className={({ isActive }) => ` ${fontStyle} ${isActive ? underline : noUnderline}`}>CV</NavLink>
-                <NavLink to="/contact" className={({ isActive }) => ` ${fontStyle} ${isActive ? underline : noUnderline}`}>Kontakt</NavLink>
+    return (
+        <nav aria-label="Hovedmeny" className="sticky top-0 z-100 w-full border-b border-gray-200 bg-white text-gray-600">
+            <div className="mx-auto flex min-h-20 max-w-7xl flex-wrap items-center justify-between gap-x-5 gap-y-3 px-5 py-4 sm:px-10">
+                <Link to="/#hjem" aria-label="Til toppen av forsiden" className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4">
+                    <LOGO className="h-6 w-23 fill-black" />
+                </Link>
+                <div className="order-last flex w-full justify-center gap-5 text-sm sm:order-none sm:w-auto sm:gap-7">
+                    {sections.map(({ id, label }) => {
+                        const active = pathname === '/' && (hash || '#hjem') === '#' + id
+                        return (
+                            <Link key={id} to={'/#' + id} aria-current={active ? 'location' : undefined}
+                                className={linkClass + (active ? ' text-black underline' : '')}>
+                                {label}
+                            </Link>
+                        )
+                    })}
+                    <NavLink to="/contact" className={({ isActive }) => linkClass + (isActive ? ' text-black underline' : '')}>
+                        Kontakt
+                    </NavLink>
+                </div>
+                <div className="relative">
+                    <button type="button" aria-label="Vis språkvalg" aria-expanded={languageOpen}
+                        aria-controls="language-options" onClick={() => setLanguageOpen(open => !open)}
+                        className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2">
+                        <Languages size={19} />
+                    </button>
+                    <div id="language-options" hidden={!languageOpen} className="absolute right-0 top-full mt-2 rounded-lg border border-gray-200 bg-white p-3 text-sm shadow-sm">
+                        <p lang="no">No</p>
+                        <p lang="en" className="mt-2">En</p>
+                    </div>
+                </div>
             </div>
-
-           <div className="relative flex ml-auto">
-            <Languages
-                className="cursor-pointer hover:scale-110 transition duration-200"
-                onClick={() => setIsHidden((v) => !v)}
-            />
-
-            <div
-                className={`absolute top-full right-0 mt-2 flex flex-col gap-2 transition-all duration-500 ease ${
-                isHidden
-                    ? 'opacity-0 pointer-events-none -translate-y-4  translate-x-2'
-                    : 'opacity-100 pointer-events-auto translate-y-2 translate-x-2'
-                }`}
-            >
-                <p className="z-[100] cursor-pointer flex items-center justify-center text-white bg-black p-2 h-10 border border-white rounded-4xl hover:scale-110 active:scale-95 transition duration-200">
-                No
-                </p>
-                <p className="z-[100] cursor-pointer flex items-center justify-center text-white bg-black p-2 h-10 border border-white rounded-4xl hover:scale-110 active:scale-95 transition duration-200">
-                En
-                </p>
-            </div>
-            </div>
-        </div>
-    </nav> 
-    </>
-  )
+        </nav>
+    )
 }
-
-export default Navbar

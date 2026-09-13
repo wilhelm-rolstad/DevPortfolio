@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Original video; the compressed MP4 is used on the site
+src/assets/Stinn.mov

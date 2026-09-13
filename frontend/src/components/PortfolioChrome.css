@@ -1,0 +1,244 @@
+@font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist-Variable.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+.portfolio-nav,
+.portfolio-footer {
+    font-family: 'Geist', sans-serif;
+    color: #202820;
+}
+
+.portfolio-nav {
+    position: sticky;
+    top: 18px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: calc(100% - 48px);
+    max-width: 1160px;
+    min-height: 70px;
+    margin: 18px auto 0;
+    padding: 10px 15px 10px 22px;
+    border: 1px solid #e3e7df;
+    border-radius: 18px;
+    background: rgb(255 255 252 / 92%);
+    box-shadow: 0 4px 24px rgb(32 40 32 / 4%);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.portfolio-nav-brand,
+.portfolio-footer-brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 14px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.portfolio-nav-brand {
+    min-height: 44px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+}
+
+.portfolio-nav-logo {
+    display: block;
+    width: 44px;
+    height: 24px;
+}
+
+.portfolio-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.portfolio-nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 42px;
+    padding: 0 17px;
+    border-radius: 10px;
+    color: #697168;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 160ms ease, background-color 160ms ease;
+}
+
+.portfolio-nav-link:hover,
+.portfolio-nav-link.is-active {
+    background: #edf1e9;
+    color: #354b38;
+}
+
+.portfolio-nav-link.portfolio-nav-contact {
+    margin-left: 9px;
+    background: #202820;
+    color: #fff;
+}
+
+.portfolio-nav-link.portfolio-nav-contact:hover,
+.portfolio-nav-link.portfolio-nav-contact.is-active {
+    background: #52715a;
+    color: #fff;
+}
+
+.portfolio-nav a:focus-visible,
+.portfolio-footer a:focus-visible {
+    outline: 2px solid #52715a;
+    outline-offset: 5px;
+    border-radius: 5px;
+}
+
+.portfolio-footer {
+    width: 100%;
+    margin-top: auto;
+    border-top: 1px solid #e3e7df;
+    background: #f8f9f5;
+}
+
+.portfolio-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: calc(100% - 48px);
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 38px 0;
+}
+
+.portfolio-footer-logo {
+    width: 39px;
+    height: 23px;
+}
+
+.portfolio-footer-brand > span {
+    display: grid;
+    gap: 5px;
+}
+
+.portfolio-footer-brand strong {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}
+
+.portfolio-footer-brand span span {
+    color: #697168;
+    font-size: 12px;
+}
+
+.portfolio-footer-contact {
+    display: grid;
+    justify-items: start;
+    gap: 8px;
+}
+
+.portfolio-footer-contact a,
+.portfolio-footer-socials a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #697168;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 160ms ease;
+}
+
+.portfolio-footer-contact a:first-child {
+    color: #202820;
+}
+
+.portfolio-footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.portfolio-footer-socials a {
+    min-height: 40px;
+}
+
+.portfolio-footer a:hover {
+    color: #52715a;
+}
+
+@media (max-width: 760px) {
+    .portfolio-nav-brand > span {
+        display: none;
+    }
+
+    .portfolio-footer-inner {
+        flex-wrap: wrap;
+        gap: 26px 36px;
+    }
+
+    .portfolio-footer-socials {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-nav {
+        gap: 6px;
+        min-height: 60px;
+        padding: 6px 8px;
+        border-radius: 14px;
+    }
+
+    .portfolio-nav-logo {
+        width: 34px;
+        height: 21px;
+    }
+
+    .portfolio-nav-links {
+        gap: 2px;
+    }
+
+    .portfolio-nav-link {
+        min-height: 44px;
+        padding: 0 7px;
+        border-radius: 8px;
+        font-size: 12px;
+    }
+
+    .portfolio-nav-link.portfolio-nav-contact {
+        margin-left: 2px;
+    }
+
+    .portfolio-nav-contact svg {
+        display: none;
+    }
+
+    .portfolio-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 30px 0;
+    }
+
+    .portfolio-footer-socials {
+        gap: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-nav-link,
+    .portfolio-footer a {
+        transition: none;
+    }
+}

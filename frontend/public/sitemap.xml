@@ -6,17 +6,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://wilhelmrolstad.no/Projects</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://wilhelmrolstad.no/Cv</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://wilhelmrolstad.no/Contact</loc>
+    <loc>https://wilhelmrolstad.no/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

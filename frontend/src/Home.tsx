@@ -1,87 +1,103 @@
 import AnimatedBox from './components/AnimatedBox'
-import {ChevronRight} from 'lucide-react'
-import { useNavigate } from 'react-router'
-import { useEffect, useState } from 'react'
-import LOGO from './assets/LOGOwilhelmrolstad.svg?react'
+import ProjectCard from './components/ProjectCard'
+import JkCoachingLogo from './assets/jk_coaching.png'
+import stinnVideo from './assets/Stinn.mp4?url'
+import KontaktMeg from './components/KontaktMeg'
+import DOTDAGENELOGO from './assets/DOTDAGENELOGO.svg'
+import CvBoks from './components/CvBoks'
 
 const Dashboard = () => {
-    const navigate = useNavigate();
-    const [hideIntro, setHideIntro] = useState(() => sessionStorage.getItem("seenIntro") === "true");
-
-    useEffect(() => {
-    if (sessionStorage.getItem("seenIntro") === "true") {
-        setHideIntro(true);
-        return;
-    }
-
-    const timer = setTimeout(() => {
-        sessionStorage.setItem("seenIntro", "true");
-        setHideIntro(true);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-    }, []);
-
-
-
-
     return(
         <>
-        <div
-            className={`text-white fixed inset-0 z-[9999] flex items-center justify-center bg-black transition-opacity duration-[3000ms] ${
-                hideIntro ? "opacity-0 pointer-events-none" : "opacity-100"
-            }`}
-            >
-            <LOGO className="fill-white h-40" />
-        </div>
-        
         <div className="mx-auto flex flex-col items-center p-10">
-            <div className="flex flex-col gap-5 m-10 w-full min-h-screen max-w-5xl" >
-                <h1 className=" text-5xl">Wilhelm Svensgaard Rolstad</h1>
-                <p>Andreårs student i Infromatikk bachelor ved NTNU, Trondheim<br/>
-                    Setter kunnskap fra studiet i praksis gjennom prosjekter.<br/>
-                    Interessert i hele utviklingsprosessen.
+            <div className="flex flex-col gap-5 m-10 w-full min-h-screen max-w-7xl" >
+                <h1 id="hjem" tabIndex={-1} className="scroll-mt-32 text-5xl focus:outline-none">Wilhelm Svensgaard Rolstad</h1>
+                <p>Tredjeårs student i Bachelor i informatikk ved NTNU, Trondheim<br/>
                     </p>
+                <h2 id="prosjekter" tabIndex={-1} className="scroll-mt-32 text-2xl focus:outline-none">Prosjekter</h2>
 
-                <AnimatedBox className="overflow-hidden p-10 h-70 border border-gray-300 rounded-xl bg-gray-200">
-                {({ isVisible }) => (
-                    <div className="flex h-full">
-                        <div className="h-100 w-[50%] transform transition duration-2000 p-5 flex flex-col gap-5">
-                            <p>Sjekk ut noen av prosjektene</p>
-                            <button className="flex gap-2 cursor-pointer p-2 rounded bg-black text-white w-[60%] hover:scale-105 active:scale-95 transition duration-200" onClick={() => navigate("/Projects")}>Prosjekter <ChevronRight/></button>
+                <AnimatedBox className="overflow-hidden rounded-xl">
+                    <ProjectCard 
+                    sizeLarge={true} 
+                    imgSpaceBg={"bg-gray-100"} 
+                    title={"BANKDASHBORD"} 
+                    name={"Stinn"} 
+                    description={"Et bankdashbord som samler kontooversikt, transaksjoner og forbruk på ett sted. Grafer og kategorier gør det enklere å se hvordan pengene brukes over tid."} 
+                    technologies={["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "TailwindCSS"]}
+                    repolink={"https://github.com/wilhelm-rolstad/bank-dashboard"}
+                    demoLive={false}>
+                    
+                        <div className="@container flex h-full w-full items-center justify-center">
+                            <div
+                                className="relative aspect-[1919/1168] w-full overflow-hidden rounded-md border-2 border-gray-200"
+                                style={{
+                                    transform: 'perspective(150cqw) rotateY(-24deg) rotateX(10deg) scale(0.6)',
+                                    boxShadow: '18px 20px 28px -12px rgb(15 23 42 / 35%)',
+                                }}
+                            >
+                                <video
+                                    src={stinnVideo}
+                                    autoPlay
+                                    muted
+                                    playsInline
+                                    className="absolute inset-0 h-full w-full object-cover scale-x-103 scale-y-104 translate-y-[1px]"
+                                    onLoadedMetadata={(e) => {
+                                        e.currentTarget.currentTime = 6
+                                    }}
+                                    onTimeUpdate={(e) => {
+                                        if (e.currentTarget.currentTime >= 80) {
+                                            e.currentTarget.currentTime = 6
+                                        }
+                                    }}
+                                />
+                            </div>
                         </div>
-                       <div className={`h-full w-[50%] transform transition duration-3000 ${isVisible ? 'translate-x-0' : 'translate-x-125'}`}>
-                       
-                       </div>
-                    </div>
-                )}
+                    </ProjectCard>
                 </AnimatedBox>
 
-                <div className="flex flex-col gap-5 border border-gray-300 rounded-xl px-5 py-10">
-                    <section className="">
-                    <h2 className="text-lg">Studie relatert kompetanse og ferdigheter</h2>
-                        <ul className="list-disc ml-10">
-                            <li>Versjonskontroll (git, Github)</li>
-                            <li>Objektorientert programmering (Java)</li>
-                            <li>Webutvikling (React, Javascript, Typescript, Tailwind, HTML, CSS)</li>
-                            <li>Databaser og datamodellering (SQL, ERD)</li>
-                            <li>Programvaresikkerhet</li>
-                            <li>Smidige arbeidsmetoder (SCRUM) </li>
-                            <li>Python</li>
-                            <li>Algoritmer og datastrukturer</li>
-                            <li>Generell kunnskap om datamaskiner og operativsystemer</li>
-                        </ul>
-                    </section>
-                     <div className="w-px self-stretch bg-gray-300" />
-                    <section>
-                        <h2 className="text-lg">Andre ferdigheter</h2>
-                        <ul className="list-disc ml-10">
-                            <li>3D modellering (Blender)</li>
-                            <li>Kundeservice - skaderådgiver forsikring</li>
-                        </ul>
-                    </section>
-                </div>
-                 <button className="cursor-pointer flex items-center justify-center gap-2 w-60 bg-black text-white p-2 rounded hover:scale-105 active:scale-95 transition duration-200" onClick={() => navigate("/CV")}>See my CV for more... <ChevronRight/> </button>
+                <section className="w-full flex flex-col md:flex-row gap-5 no-wrap">
+                     <ProjectCard 
+                     style={"flex-1"} 
+                     imgSpaceBg={"bg-[#84c97f]"} 
+                     sizeLarge={false} title={"KARRIEREDAG"} 
+                     name={"dotDAGENE"} 
+                     description={"Nettside for en karrieredag ved NTNU for digitalisering og teknologi. Viser frem hva dotDAGENE gjør og hvilke bedrifter som skal delta i arrangementet, samt kontaktskjema for bedrifter."} 
+                     technologies={["React", "TypeScript", "TailwindCSS", "ResendAPI"]}
+                     testlink={"https://dotdagene.no"}
+                     repolink={"https://github.com/appKom/dotDAGENE"}
+                     demoLive={true}
+                     >
+                        <img
+                        src={DOTDAGENELOGO}
+                        alt="Kellmer Coaching website"
+                        className="w-full h-full object-contain scale-40"
+                        />
+                     </ProjectCard>
+                     <ProjectCard 
+                     style={"flex-1"} 
+                     imgSpaceBg={"bg-[#3160b0]"} 
+                     sizeLarge={false} 
+                     title={"NETTSIDE"} 
+                     name={"Kellmer Coaching"} 
+                     description={"Nettside for Personlig trener som viser resultater og omtaler fra klienter. Nettsiden viser frem hva man får av tjenester skulle man starte på en plan, og gir også muligheten for å melde seg opp gjennom kontaktskjema"} 
+                     technologies={["React", "TypeScript", "TailwindCSS", "ResendAPI"]}
+                     testlink={"https://kellmercoaching.no"}
+                     repolink={"https://github.com/wilhelm-rolstad/kellmer_coaching"}
+                    demoLive={true}
+                          >
+                        
+                        <img
+                        src={JkCoachingLogo}
+                        alt="Kellmer Coaching website"
+                        className="w-full h-full object-contain scale-150"
+                        />
+                     </ProjectCard>
+                </section>
+
+
+                <CvBoks/>
+
+                 <KontaktMeg/>
             </div>
         </div>
         </>
